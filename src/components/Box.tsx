@@ -1,11 +1,11 @@
-import { PropsWithChildren } from 'react'
+import type { PropsWithChildren } from 'react'
 
 export const Section = ({ children }: PropsWithChildren) => {
   return <section className="flex-column mb-10">{children}</section>
 }
 
 export const GridContainer2 = ({ children }: PropsWithChildren) => {
-  return <div className="grid grid-cols-2 gap-4">{children}</div>
+  return <div className="grid grid-cols-2  gap-4 ">{children}</div>
 }
 
 export const GridContainer3 = ({ children }: PropsWithChildren) => {
@@ -14,7 +14,7 @@ export const GridContainer3 = ({ children }: PropsWithChildren) => {
 
 export const Code = ({ children }: PropsWithChildren) => {
   return (
-    <span className="bg-black-100 border border-black-200 rounded-md px-1.5 py-0.5 text-error mx-0.5 font-bold">
+    <span className="mx-0.5 rounded-md border border-black-200 bg-black-100 px-1.5 py-0.5 font-bold text-error">
       {children}
     </span>
   )
@@ -22,7 +22,7 @@ export const Code = ({ children }: PropsWithChildren) => {
 
 export const CodeSection = ({ children }: PropsWithChildren) => {
   return (
-    <div className="bg-black-100 border border-black-200 rounded-md px-1.5 py-0.5 mb-10 text-black-500 mx-0.5 font-bold whitespace-pre">
+    <div className="mx-0.5 mb-10 whitespace-pre rounded-md border border-black-200 bg-black-100 px-1.5 py-0.5 font-bold text-black-500">
       {children}
     </div>
   )

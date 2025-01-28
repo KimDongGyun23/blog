@@ -1,4 +1,4 @@
-import { PropsWithChildren } from 'react'
+import type { PropsWithChildren } from 'react'
 
 type TextComponentProps = PropsWithChildren<{
   className?: string
@@ -29,7 +29,7 @@ export const P1 = ({ children, className = '' }: TextComponentProps) => {
 }
 
 export const P2 = ({ children, className = '' }: TextComponentProps) => {
-  return <p className={`mb-4 text-md font-medium text-black-500 ${className}`}>{children}</p>
+  return <p className={`mb-4 text-base font-medium text-black-500 ${className}`}>{children}</p>
 }
 
 export const P3 = ({ children, className = '' }: TextComponentProps) => {

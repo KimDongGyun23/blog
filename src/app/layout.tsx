@@ -2,8 +2,9 @@ import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import Link from 'next/link'
 
-import '@/styles/index.css'
 import { SideNavigation } from '@/components/SideNavigation'
+
+import '@/styles/index.css'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',

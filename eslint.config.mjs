@@ -10,7 +10,7 @@ import react from 'eslint-plugin-react'
 import reactHooks from 'eslint-plugin-react-hooks'
 import eslintPluginSimpleImportSort from 'eslint-plugin-simple-import-sort'
 import eslintPluginUnusedImports from 'eslint-plugin-unused-imports'
-import globals from 'globals'
+import eslintPluginTailwindcss from 'eslint-plugin-tailwindcss'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
@@ -30,10 +30,6 @@ const eslintConfig = [
         ecmaVersion: 'latest',
         sourceType: 'module',
         ecmaFeatures: { jsx: true },
-      },
-      globals: {
-        ...globals.browser,
-        ...globals.es2020,
       },
     },
     settings: {
@@ -62,6 +58,7 @@ const eslintConfig = [
       prettier: eslintPluginPrettier,
       react,
       'react-hooks': reactHooks,
+      tailwindcss: eslintPluginTailwindcss,
     },
     rules: {
       ...typescriptEslint.configs.recommended.rules,
@@ -105,6 +102,8 @@ const eslintConfig = [
       'react/jsx-no-target-blank': 'off',
       'react/jsx-uses-react': 'off',
       'react/react-in-jsx-scope': 'off',
+      'tailwindcss/classnames-order': 'warn',
+      'tailwindcss/no-custom-classname': 'warn',
       'prettier/prettier': [
         'error',
         {
