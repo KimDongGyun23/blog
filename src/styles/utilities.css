@@ -1,0 +1,11 @@
+@tailwind utilities;
+
+@layer utilities {
+  .hover-scale {
+    @apply transition-all hover:scale-105;
+  }
+
+  .webkit-overflow-scrolling-touch {
+    -webkit-overflow-scrolling: touch;
+  }
+}
