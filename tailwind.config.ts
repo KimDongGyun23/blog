@@ -10,6 +10,11 @@ export default {
     boxShadow: {
       lg: '0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px -2px 4px 0px rgba(0, 0, 0, 0.15)',
     },
+    fontWeight: {
+      light: '300',
+      medium: '500',
+      bold: '700',
+    },
     extend: {
       fontFamily: {
         jalnan: ['Jalnan'],
