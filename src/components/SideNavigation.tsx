@@ -21,7 +21,7 @@ const NavItem = React.memo(({ item }: NavItemProps) => {
 
   return (
     <Link href={item.url} className={`flex gap-4 rounded-xl px-4 py-3 ${itemStyle}`}>
-      <span className="text-xl">{item.label}</span>
+      <span className="text-xl font-bold">{item.label}</span>
     </Link>
   )
 })
