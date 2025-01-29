@@ -8,6 +8,7 @@ type Actions = {
   setCurrentPage: (page: number) => void
   setCurrentGroup: (group: number) => void
   resetProjects: () => void
+  filterProjectsByTag: (tag: string | null) => void
 }
 
 type Project = {
@@ -63,6 +64,18 @@ export const useProjectStore = create<ProjectStore>((set, get) => ({
         currentGroup: 0,
         totalPages: calculateTotalPages(initialProjects),
       }),
+    filterProjectsByTag: (tag) => {
+      const filtered =
+        tag === '전체' || tag === null
+          ? initialProjects
+          : initialProjects.filter((project) => project.tag === tag)
+      set({
+        projects: filtered,
+        currentPage: 1,
+        currentGroup: 0,
+        totalPages: calculateTotalPages(filtered),
+      })
+    },
   },
 }))
 
