@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import Link from 'next/link'
 
 import { SideNavigation } from '@/components/SideNavigation'
+import { SideTagBar } from '@/components/SideTagBar'
 
 import '@/styles/index.css'
 
@@ -41,6 +42,7 @@ export default function RootLayout({
             <div className="col-span-4 overflow-x-hidden rounded-xl bg-white p-4 drop-shadow-sm">
               {children}
             </div>
+            <SideTagBar />
           </div>
         </div>
       </body>
