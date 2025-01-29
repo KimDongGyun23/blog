@@ -5,11 +5,15 @@ type TextComponentProps = PropsWithChildren<{
 }>
 
 export const Title = ({ children, className = '' }: TextComponentProps) => {
-  return <h2 className={`mb-10 text-4xl font-bold text-black-700 ${className}`}>{children}</h2>
+  return <h2 className={`text-4xl font-bold text-black-700 ${className}`}>{children}</h2>
 }
 
 export const SubTitle = ({ children, className = '' }: TextComponentProps) => {
-  return <h3 className={`mb-8 text-3xl font-bold text-black-700 ${className}`}>{children}</h3>
+  return <h3 className={`text-xl font-bold text-black-500 ${className}`}>{children}</h3>
+}
+
+export const Date = ({ children, className = '' }: TextComponentProps) => {
+  return <span className={`text-sm text-black-500 ${className}`}>{children}</span>
 }
 
 export const H1 = ({ children, className = '' }: TextComponentProps) => {
