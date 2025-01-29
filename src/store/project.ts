@@ -7,6 +7,7 @@ type Actions = {
   searchProjects: (query: string) => void
   setCurrentPage: (page: number) => void
   setCurrentGroup: (group: number) => void
+  resetProjects: () => void
 }
 
 type Project = {
@@ -47,9 +48,21 @@ export const useProjectStore = create<ProjectStore>((set, get) => ({
           project.title.toLowerCase().includes(query.toLowerCase()) ||
           project.tag.toLowerCase().includes(query.toLowerCase()),
       )
-      set({ projects: filtered })
+      set({
+        projects: filtered,
+        currentPage: 1,
+        currentGroup: 0,
+        totalPages: calculateTotalPages(filtered),
+      })
     },
     setCurrentGroup: (group) => set({ currentGroup: group }),
+    resetProjects: () =>
+      set({
+        projects: initialProjects,
+        currentPage: 1,
+        currentGroup: 0,
+        totalPages: calculateTotalPages(initialProjects),
+      }),
   },
 }))
 
