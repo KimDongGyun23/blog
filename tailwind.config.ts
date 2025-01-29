@@ -22,7 +22,7 @@ export default {
       colors: {
         black: {
           100: '#F3F3F3',
-          200: '#D2D0CD',
+          200: '#E8E8E8',
           300: '#BAB7B3',
           400: '#A09B96',
           500: '#7F7973',
