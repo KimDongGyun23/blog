@@ -13,9 +13,11 @@ type TagStore = {
   actions: Actions
 }
 
+const initialTags = ['전체', 'BROOM']
+
 export const useTagStore = create<TagStore>((set) => ({
-  tagList: ['전체', 'BROOM', '돈두댓', '알콩달콩'],
-  activeTag: '전체',
+  tagList: initialTags,
+  activeTag: initialTags[0],
   actions: {
     setTagList: (tags) => set({ tagList: ['전체', ...tags] }),
     setActiveTag: (tag) => set({ activeTag: tag }),
