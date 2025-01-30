@@ -1,5 +1,7 @@
 import { create } from 'zustand'
 
+import { PROJECT_LIST } from '@/app/project/detail/[id]/_post'
+
 export const ITEMS_PER_PAGE = 5
 export const MAX_PAGE_BUTTONS = 5
 
@@ -26,12 +28,7 @@ type ProjectStore = {
   actions: Actions
 }
 
-const initialProjects = Array.from({ length: 48 }, (_, i) => ({
-  id: i,
-  title: `부름 2차 리팩토링 ${i}`,
-  date: '2024.01.20',
-  tag: 'BROOM',
-}))
+const initialProjects = PROJECT_LIST
 
 const calculateTotalPages = (projects: Project[]) => Math.ceil(projects.length / ITEMS_PER_PAGE)
 
