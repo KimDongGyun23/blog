@@ -1,12 +1,28 @@
-import type { FormEvent } from 'react'
+import type { ChangeEvent, FormEvent } from 'react'
 
-import { SearchIcon } from './Icons'
+import { useProjectActions } from '@/store/project'
+import { useSearchActions, useSearchQuery } from '@/store/search'
+
+import { SearchBrushIcon, SearchIcon } from './Icons'
 
 type SearchBarProps = {
   onSubmit: (formData: FormData) => void
 }
 
 export const SearchBar = ({ onSubmit }: SearchBarProps) => {
+  const query = useSearchQuery()
+  const { setQuery } = useSearchActions()
+  const { resetProjects } = useProjectActions()
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setQuery(e.target.value)
+  }
+
+  const handleCancel = () => {
+    setQuery('')
+    resetProjects()
+  }
+
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const formData = new FormData(e.currentTarget)
@@ -20,12 +36,19 @@ export const SearchBar = ({ onSubmit }: SearchBarProps) => {
     >
       <input
         name="search"
+        value={query}
+        onChange={handleChange}
         placeholder="검색어를 입력해주세요."
         className="flex-1 bg-transparent text-black-600 outline-none placeholder:text-black-400 focus:outline-none"
       />
-      <button type="submit">
-        <SearchIcon />
-      </button>
+      <div className="flex-align gap-2">
+        <button onClick={handleCancel}>
+          <SearchBrushIcon />
+        </button>
+        <button type="submit">
+          <SearchIcon />
+        </button>
+      </div>
     </form>
   )
 }
